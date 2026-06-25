@@ -1,0 +1,2142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby Star - Vêtements, Chaussures & Accessoires Enfants | Bouaké</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #FF6B9D;
+            --secondary: #4ECDC4;
+            --accent: #FFE66D;
+            --dark: #2C3E50;
+            --light: #FFF5F7;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo i {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 2px;
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        /* Hero */
+        .hero {
+            margin-top: 70px;
+            background: linear-gradient(135deg, var(--light) 0%, #fff 50%, var(--light) 100%);
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: var(--accent);
+            border-radius: 50%;
+            opacity: 0.3;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: -30px;
+            width: 150px;
+            height: 150px;
+            background: var(--secondary);
+            border-radius: 50%;
+            opacity: 0.2;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 3.2rem;
+            color: var(--dark);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content h1 span {
+            color: var(--primary);
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .badge {
+            background: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(255,107,157,0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255,107,157,0.5);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: var(--white);
+            margin-left: 1rem;
+        }
+
+        .btn-whatsapp:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image-placeholder {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border-radius: 30px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 5rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image-placeholder::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255,255,255,0.1) 10px,
+                rgba(255,255,255,0.1) 20px
+            );
+            animation: slide 20s linear infinite;
+        }
+
+        @keyframes slide {
+            0% { transform: translate(-50%, -50%); }
+            100% { transform: translate(0, 0); }
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title p {
+            color: #888;
+            font-size: 1.1rem;
+        }
+
+        .section-title .line {
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        /* Categories */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .category-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            cursor: pointer;
+            border: 2px solid transparent;
+            overflow: hidden;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .category-img {
+            width: 100%;
+            height: 150px;
+            border-radius: 15px;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .category-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 2rem;
+            color: var(--white);
+        }
+
+        .cat-1 { background: linear-gradient(135deg, #FF6B9D, #FF8E53); }
+        .cat-2 { background: linear-gradient(135deg, #4ECDC4, #44A08D); }
+        .cat-3 { background: linear-gradient(135deg, #667EEA, #764BA2); }
+        .cat-4 { background: linear-gradient(135deg, #F093FB, #F5576C); }
+        .cat-5 { background: linear-gradient(135deg, #4FACFE, #00F2FE); }
+        .cat-6 { background: linear-gradient(135deg, #43E97B, #38F9D7); }
+
+        .category-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .category-card p {
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        /* Products */
+        .products-section {
+            background: var(--light);
+            padding: 4rem 2rem;
+        }
+
+        .products-section .section-title h2 {
+            color: var(--dark);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        /* CAROUSEL STYLES - 10 IMAGES */
+        .product-img {
+            height: 220px;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #b0b8c4;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-img img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .product-img img.active {
+            opacity: 1;
+        }
+
+        .product-img img[src=""] {
+            display: none;
+        }
+
+        .carousel-dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 5px;
+            z-index: 3;
+            background: rgba(0,0,0,0.4);
+            padding: 5px 12px;
+            border-radius: 20px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 90%;
+        }
+
+        .product-card:hover .carousel-dots {
+            opacity: 1;
+        }
+
+        .carousel-dots.visible {
+            opacity: 1;
+        }
+
+        .carousel-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.6);
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            padding: 0;
+            flex-shrink: 0;
+        }
+
+        .carousel-dot.active {
+            background: var(--primary);
+            transform: scale(1.4);
+        }
+
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.9);
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 3;
+            color: var(--dark);
+            font-size: 0.9rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .product-card:hover .carousel-arrow {
+            opacity: 1;
+        }
+
+        .carousel-arrow.prev { left: 8px; }
+        .carousel-arrow.next { right: 8px; }
+
+        .carousel-arrow:hover {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        .product-img .tag {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-info .price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .product-info .btn-small {
+            width: 100%;
+            justify-content: center;
+            padding: 0.8rem;
+            font-size: 0.9rem;
+        }
+
+        /* About / Location */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-content h3 {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .about-content p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: var(--light);
+            border-radius: 15px;
+        }
+
+        .info-list li i {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .info-list li div strong {
+            display: block;
+            color: var(--dark);
+        }
+
+        .info-list li div span {
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .map-placeholder {
+            background: linear-gradient(135deg, #e0e0e0, #f0f0f0);
+            border-radius: 20px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .map-placeholder i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        /* Hours */
+        .hours-section {
+            background: var(--dark);
+            color: var(--white);
+            padding: 4rem 2rem;
+        }
+
+        .hours-section .section-title h2 {
+            color: var(--white);
+        }
+
+        .hours-section .section-title p {
+            color: #aaa;
+        }
+
+        .hours-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hour-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s;
+        }
+
+        .hour-card:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-3px);
+        }
+
+        .hour-card .day {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+
+        .hour-card .time {
+            font-size: 1.2rem;
+        }
+
+        .hour-card .status {
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .status-open {
+            background: rgba(78,205,196,0.2);
+            color: var(--secondary);
+        }
+
+        .status-closed {
+            background: rgba(255,107,157,0.2);
+            color: var(--primary);
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-form {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .contact-info-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .contact-card i {
+            width: 50px;
+            height: 50px;
+            border-radius: 15px;
+            background: var(--light);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .contact-card div strong {
+            display: block;
+            color: var(--dark);
+            margin-bottom: 0.2rem;
+        }
+
+        .contact-card div a {
+            color: #888;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-card div a:hover {
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #aaa;
+            text-decoration: none;
+            line-height: 1.8;
+            font-size: 0.9rem;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #888;
+            font-size: 0.85rem;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 300px;
+            height: 100vh;
+            background: var(--white);
+            z-index: 1001;
+            padding: 2rem;
+            transition: right 0.3s;
+            box-shadow: -5px 0 30px rgba(0,0,0,0.1);
+        }
+
+        .mobile-menu.active {
+            right: 0;
+            display: block;
+        }
+
+        .mobile-menu .close-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+            margin-bottom: 2rem;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+        }
+
+        .mobile-menu ul li {
+            margin-bottom: 1.5rem;
+        }
+
+        .mobile-menu ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
+        /* MUSIC PLAYER */
+        .music-player {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 9999;
+        }
+
+        .music-btn {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), #FF8E53);
+            color: var(--white);
+            border: none;
+            cursor: pointer;
+            font-size: 1.3rem;
+            box-shadow: 0 4px 20px rgba(255,107,157,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .music-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(255,107,157,0.6);
+        }
+
+        .music-btn.playing {
+            animation: musicPulse 1.5s infinite;
+            background: linear-gradient(135deg, var(--secondary), #44A08D);
+        }
+
+        @keyframes musicPulse {
+            0%, 100% { box-shadow: 0 4px 20px rgba(78,205,196,0.4); }
+            50% { box-shadow: 0 4px 30px rgba(78,205,196,0.7); }
+        }
+
+        .music-tooltip {
+            position: absolute;
+            bottom: 65px;
+            right: 0;
+            background: var(--dark);
+            color: var(--white);
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+
+        .music-btn:hover .music-tooltip {
+            opacity: 1;
+        }
+
+        /* AUTOPLAY FALLBACK BANNER */
+        .music-fallback {
+            position: fixed;
+            bottom: 90px;
+            right: 25px;
+            background: var(--dark);
+            color: var(--white);
+            padding: 10px 16px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            z-index: 9998;
+            display: none;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            animation: bounceIn 0.5s ease;
+            max-width: 250px;
+            cursor: pointer;
+        }
+
+        .music-fallback.show {
+            display: flex;
+        }
+
+        .music-fallback i {
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+
+        @keyframes bounceIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-badges {
+                justify-content: center;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+
+            .hero-image-placeholder {
+                height: 250px;
+            }
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .btn-whatsapp {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+
+            .hero-content .btn {
+                display: flex;
+                justify-content: center;
+            }
+
+            .carousel-arrow {
+                opacity: 1 !important;
+                width: 28px;
+                height: 28px;
+                font-size: 0.8rem;
+            }
+
+            .carousel-dots {
+                opacity: 1 !important;
+            }
+
+            .music-btn {
+                width: 48px;
+                height: 48px;
+                font-size: 1.1rem;
+            }
+
+            .music-fallback {
+                bottom: 80px;
+                right: 15px;
+                font-size: 0.75rem;
+                max-width: 200px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                <i class="fas fa-star"></i>
+                Baby Star
+            </a>
+            <ul class="nav-links">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#categories">Catégories</a></li>
+                <li><a href="#produits">Nos Produits</a></li>
+                <li><a href="#apropos">À propos</a></li>
+                <li><a href="#horaires">Horaires</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="overlay" onclick="toggleMenu()"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-btn" onclick="toggleMenu()">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul>
+            <li><a href="#accueil" onclick="toggleMenu()">Accueil</a></li>
+            <li><a href="#categories" onclick="toggleMenu()">Catégories</a></li>
+            <li><a href="#produits" onclick="toggleMenu()">Nos Produits</a></li>
+            <li><a href="#apropos" onclick="toggleMenu()">À propos</a></li>
+            <li><a href="#horaires" onclick="toggleMenu()">Horaires</a></li>
+            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero" id="accueil">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badges">
+                    <span class="badge"><i class="fas fa-check"></i> Qualité garantie</span>
+                    <span class="badge"><i class="fas fa-tags"></i> Prix imbattables</span>
+                    <span class="badge"><i class="fas fa-heart"></i> Tendance 2026</span>
+                </div>
+                <h1>La mode <span>enfantine</span> à Bouaké</h1>
+                <p>Vêtements, chaussures et accessoires tendance pour vos enfants et adolescents de 0 à 15 ans. Découvrez notre sélection unique au cœur de Bouaké.</p>
+                <div>
+                    <a href="#categories" class="btn btn-primary">
+                        <i class="fas fa-shopping-bag"></i>
+                        Découvrir nos produits
+                    </a>
+                    <a href="https://wa.me/2250153129297" class="btn btn-whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        Nous écrire
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-image-placeholder">
+                    <i class="fas fa-child"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section id="categories">
+        <div class="section-title">
+            <h2>Nos Catégories</h2>
+            <div class="line"></div>
+            <p>Du nouveau-né à l'adolescent, nous avons tout ce qu'il faut</p>
+        </div>
+        <div class="categories-grid">
+            <div class="category-card" onclick="scrollToSection('produits')">
+                <div class="category-icon cat-1">
+                    <i class="fas fa-female"></i>
+                </div>
+                <h3>Ensembles Filles</h3>
+                <p>Tenues complètes tendance</p>
+            </div>
+            <div class="category-card" onclick="scrollToSection('produits')">
+                <div class="category-icon cat-2">
+                    <i class="fas fa-male"></i>
+                </div>
+                <h3>Ensembles Garçons</h3>
+                <p>Style et confort</p>
+            </div>
+            <div class="category-card" onclick="scrollToSection('produits')">
+                <div class="category-icon cat-3">
+                    <i class="fas fa-tshirt"></i>
+                </div>
+                <h3>Pulls & Joggings</h3>
+                <p>Confort au quotidien</p>
+            </div>
+            <div class="category-card" onclick="scrollToSection('produits')">
+                <div class="category-icon cat-4">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <h3>Pyjamas</h3>
+                <p>Doux et confortables</p>
+            </div>
+            <div class="category-card" onclick="scrollToSection('produits')">
+                <div class="category-icon cat-5">
+                    <i class="fas fa-shoe-prints"></i>
+                </div>
+                <h3>Chaussures</h3>
+                <p>Baskets, tennis, sandales</p>
+            </div>
+            <div class="category-card" onclick="scrollToSection('produits')">
+                <div class="category-icon cat-6">
+                    <i class="fas fa-shopping-bag"></i>
+                </div>
+                <h3>Accessoires</h3>
+                <p>Sacs, casquettes, bijoux</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section class="products-section" id="produits">
+        <div class="section-title">
+            <h2>Nos Produits</h2>
+            <div class="line"></div>
+            <p>Tout ce dont vos enfants ont besoin, au meilleur prix</p>
+        </div>
+        <div class="products-grid">
+            <!-- PRODUIT : Ensembles Filles -->
+            <div class="product-card">
+                <div class="product-img" data-carousel="ensembles-filles">
+                    <img src="prod-ensembles-filles.jpg" alt="Ensembles Filles 1" onerror="hideBroken(this)">
+                    <img src="prod-ensembles-filles-2.jpg" alt="Ensembles Filles 2" onerror="hideBroken(this)">
+                    <img src="prod-ensembles-filles-3.jpg" alt="Ensembles Filles 3" onerror="hideBroken(this)">
+                    <img src="prod-ensembles-filles-4.jpg" alt="Ensembles Filles 4" onerror="hideBroken(this)">
+                    <img src="prod-ensembles-filles-5.jpg" alt="Ensembles Filles 5" onerror="hideBroken(this)">
+                    <img src="prod-ensembles-filles-6.jpg" alt="Ensembles Filles 6" onerror="hideBroken(this)">
+                    <img src="prod-ensembles-filles-7.jpg" alt="Ensembles Filles 7" onerror="hideBroken(this)">
+                    <img src="prod-ensembles-filles-8.jpg" alt="Ensembles Filles 8" onerror="hideBroken(this)">
+                    <img src="prod-ensembles-filles-9.jpg" alt="Ensembles Filles 9" onerror="hideBroken(this)">
+                    <img src="prod-ensembles-filles-10.jpg" alt="Ensembles Filles 10" onerror="hideBroken(this)">
+                    <div class="carousel-dots" id="dots-ensembles-filles"></div>
+                    <button class="carousel-arrow prev" onclick="changeSlide('ensembles-filles', -1)">❮</button>
+                    <button class="carousel-arrow next" onclick="changeSlide('ensembles-filles', 1)">❯</button>
+                </div>
+                <div class="product-info">
+                    <h3>Ensembles Filles</h3>
+                    <div class="price">À partir de 5 000 FCFA</div>
+                    <button class="btn btn-primary btn-small" onclick="contactForProduct('Ensembles Filles')">
+                        <i class="fab fa-whatsapp"></i> Commander
+                    </button>
+                </div>
+            </div>
+
+            <!-- PRODUIT : Ensembles Garçons -->
+            <div class="product-card">
+                <div class="product-img" data-carousel="ensembles-garcons">
+                    <img src="prod-ensembles-garcons.jpg" alt="Ensembles Garçons 1" onerror="hideBroken(this)">
+                    <img src="prod-ensembles-garcons-2.jpg" alt="Ensembles Garçons 2" onerror="hideBroken(this)">
+                    <img src="prod-ensembles-garcons-3.jpg" alt="Ensembles Garçons 3" onerror="hideBroken(this)">
+                    <img src="prod-ensembles-garcons-4.jpg" alt="Ensembles Garçons 4" onerror="hideBroken(this)">
+                    <img src="prod-ensembles-garcons-5.jpg" alt="Ensembles Garçons 5" onerror="hideBroken(this)">
+                    <img src="prod-ensembles-garcons-6.jpg" alt="Ensembles Garçons 6" onerror="hideBroken(this)">
+                    <img src="prod-ensembles-garcons-7.jpg" alt="Ensembles Garçons 7" onerror="hideBroken(this)">
+                    <img src="prod-ensembles-garcons-8.jpg" alt="Ensembles Garçons 8" onerror="hideBroken(this)">
+                    <img src="prod-ensembles-garcons-9.jpg" alt="Ensembles Garçons 9" onerror="hideBroken(this)">
+                    <img src="prod-ensembles-garcons-10.jpg" alt="Ensembles Garçons 10" onerror="hideBroken(this)">
+                    <div class="carousel-dots" id="dots-ensembles-garcons"></div>
+                    <button class="carousel-arrow prev" onclick="changeSlide('ensembles-garcons', -1)">❮</button>
+                    <button class="carousel-arrow next" onclick="changeSlide('ensembles-garcons', 1)">❯</button>
+                </div>
+                <div class="product-info">
+                    <h3>Ensembles Garçons</h3>
+                    <div class="price">À partir de 5 000 FCFA</div>
+                    <button class="btn btn-primary btn-small" onclick="contactForProduct('Ensembles Garçons')">
+                        <i class="fab fa-whatsapp"></i> Commander
+                    </button>
+                </div>
+            </div>
+
+            <!-- PRODUIT : Pulls -->
+            <div class="product-card">
+                <div class="product-img" data-carousel="pulls">
+                    <img src="prod-pulls.jpg" alt="Pulls 1" onerror="hideBroken(this)">
+                    <img src="prod-pulls-2.jpg" alt="Pulls 2" onerror="hideBroken(this)">
+                    <img src="prod-pulls-3.jpg" alt="Pulls 3" onerror="hideBroken(this)">
+                    <img src="prod-pulls-4.jpg" alt="Pulls 4" onerror="hideBroken(this)">
+                    <img src="prod-pulls-5.jpg" alt="Pulls 5" onerror="hideBroken(this)">
+                    <img src="prod-pulls-6.jpg" alt="Pulls 6" onerror="hideBroken(this)">
+                    <img src="prod-pulls-7.jpg" alt="Pulls 7" onerror="hideBroken(this)">
+                    <img src="prod-pulls-8.jpg" alt="Pulls 8" onerror="hideBroken(this)">
+                    <img src="prod-pulls-9.jpg" alt="Pulls 9" onerror="hideBroken(this)">
+                    <img src="prod-pulls-10.jpg" alt="Pulls 10" onerror="hideBroken(this)">
+                    <div class="carousel-dots" id="dots-pulls"></div>
+                    <button class="carousel-arrow prev" onclick="changeSlide('pulls', -1)">❮</button>
+                    <button class="carousel-arrow next" onclick="changeSlide('pulls', 1)">❯</button>
+                </div>
+                <div class="product-info">
+                    <h3>Pulls</h3>
+                    <div class="price">À partir de 4 000 FCFA</div>
+                    <button class="btn btn-primary btn-small" onclick="contactForProduct('Pulls')">
+                        <i class="fab fa-whatsapp"></i> Commander
+                    </button>
+                </div>
+            </div>
+
+            <!-- PRODUIT : Pyjamas -->
+            <div class="product-card">
+                <div class="product-img" data-carousel="pyjamas">
+                    <img src="prod-pyjamas.jpg" alt="Pyjamas 1" onerror="hideBroken(this)">
+                    <img src="prod-pyjamas-2.jpg" alt="Pyjamas 2" onerror="hideBroken(this)">
+                    <img src="prod-pyjamas-3.jpg" alt="Pyjamas 3" onerror="hideBroken(this)">
+                    <img src="prod-pyjamas-4.jpg" alt="Pyjamas 4" onerror="hideBroken(this)">
+                    <img src="prod-pyjamas-5.jpg" alt="Pyjamas 5" onerror="hideBroken(this)">
+                    <img src="prod-pyjamas-6.jpg" alt="Pyjamas 6" onerror="hideBroken(this)">
+                    <img src="prod-pyjamas-7.jpg" alt="Pyjamas 7" onerror="hideBroken(this)">
+                    <img src="prod-pyjamas-8.jpg" alt="Pyjamas 8" onerror="hideBroken(this)">
+                    <img src="prod-pyjamas-9.jpg" alt="Pyjamas 9" onerror="hideBroken(this)">
+                    <img src="prod-pyjamas-10.jpg" alt="Pyjamas 10" onerror="hideBroken(this)">
+                    <div class="carousel-dots" id="dots-pyjamas"></div>
+                    <button class="carousel-arrow prev" onclick="changeSlide('pyjamas', -1)">❮</button>
+                    <button class="carousel-arrow next" onclick="changeSlide('pyjamas', 1)">❯</button>
+                </div>
+                <div class="product-info">
+                    <h3>Pyjamas</h3>
+                    <div class="price">À partir de 3 500 FCFA</div>
+                    <button class="btn btn-primary btn-small" onclick="contactForProduct('Pyjamas')">
+                        <i class="fab fa-whatsapp"></i> Commander
+                    </button>
+                </div>
+            </div>
+
+            <!-- PRODUIT : Casquettes -->
+            <div class="product-card">
+                <div class="product-img" data-carousel="casquettes">
+                    <img src="prod-casquettes.jpg" alt="Casquettes 1" onerror="hideBroken(this)">
+                    <img src="prod-casquettes-2.jpg" alt="Casquettes 2" onerror="hideBroken(this)">
+                    <img src="prod-casquettes-3.jpg" alt="Casquettes 3" onerror="hideBroken(this)">
+                    <img src="prod-casquettes-4.jpg" alt="Casquettes 4" onerror="hideBroken(this)">
+                    <img src="prod-casquettes-5.jpg" alt="Casquettes 5" onerror="hideBroken(this)">
+                    <img src="prod-casquettes-6.jpg" alt="Casquettes 6" onerror="hideBroken(this)">
+                    <img src="prod-casquettes-7.jpg" alt="Casquettes 7" onerror="hideBroken(this)">
+                    <img src="prod-casquettes-8.jpg" alt="Casquettes 8" onerror="hideBroken(this)">
+                    <img src="prod-casquettes-9.jpg" alt="Casquettes 9" onerror="hideBroken(this)">
+                    <img src="prod-casquettes-10.jpg" alt="Casquettes 10" onerror="hideBroken(this)">
+                    <div class="carousel-dots" id="dots-casquettes"></div>
+                    <button class="carousel-arrow prev" onclick="changeSlide('casquettes', -1)">❮</button>
+                    <button class="carousel-arrow next" onclick="changeSlide('casquettes', 1)">❯</button>
+                </div>
+                <div class="product-info">
+                    <h3>Casquettes</h3>
+                    <div class="price">À partir de 2 000 FCFA</div>
+                    <button class="btn btn-primary btn-small" onclick="contactForProduct('Casquettes')">
+                        <i class="fab fa-whatsapp"></i> Commander
+                    </button>
+                </div>
+            </div>
+
+            <!-- PRODUIT : Ballerines -->
+            <div class="product-card">
+                <div class="product-img" data-carousel="ballerines">
+                    <img src="prod-ballerines.jpg" alt="Ballerines 1" onerror="hideBroken(this)">
+                    <img src="prod-ballerines-2.jpg" alt="Ballerines 2" onerror="hideBroken(this)">
+                    <img src="prod-ballerines-3.jpg" alt="Ballerines 3" onerror="hideBroken(this)">
+                    <img src="prod-ballerines-4.jpg" alt="Ballerines 4" onerror="hideBroken(this)">
+                    <img src="prod-ballerines-5.jpg" alt="Ballerines 5" onerror="hideBroken(this)">
+                    <img src="prod-ballerines-6.jpg" alt="Ballerines 6" onerror="hideBroken(this)">
+                    <img src="prod-ballerines-7.jpg" alt="Ballerines 7" onerror="hideBroken(this)">
+                    <img src="prod-ballerines-8.jpg" alt="Ballerines 8" onerror="hideBroken(this)">
+                    <img src="prod-ballerines-9.jpg" alt="Ballerines 9" onerror="hideBroken(this)">
+                    <img src="prod-ballerines-10.jpg" alt="Ballerines 10" onerror="hideBroken(this)">
+                    <div class="carousel-dots" id="dots-ballerines"></div>
+                    <button class="carousel-arrow prev" onclick="changeSlide('ballerines', -1)">❮</button>
+                    <button class="carousel-arrow next" onclick="changeSlide('ballerines', 1)">❯</button>
+                </div>
+                <div class="product-info">
+                    <h3>Ballerines</h3>
+                    <div class="price">À partir de 4 500 FCFA</div>
+                    <button class="btn btn-primary btn-small" onclick="contactForProduct('Ballerines')">
+                        <i class="fab fa-whatsapp"></i> Commander
+                    </button>
+                </div>
+            </div>
+
+            <!-- PRODUIT : Baskets -->
+            <div class="product-card">
+                <div class="product-img" data-carousel="baskets">
+                    <img src="prod-baskets.jpg" alt="Baskets 1" onerror="hideBroken(this)">
+                    <img src="prod-baskets-2.jpg" alt="Baskets 2" onerror="hideBroken(this)">
+                    <img src="prod-baskets-3.jpg" alt="Baskets 3" onerror="hideBroken(this)">
+                    <img src="prod-baskets-4.jpg" alt="Baskets 4" onerror="hideBroken(this)">
+                    <img src="prod-baskets-5.jpg" alt="Baskets 5" onerror="hideBroken(this)">
+                    <img src="prod-baskets-6.jpg" alt="Baskets 6" onerror="hideBroken(this)">
+                    <img src="prod-baskets-7.jpg" alt="Baskets 7" onerror="hideBroken(this)">
+                    <img src="prod-baskets-8.jpg" alt="Baskets 8" onerror="hideBroken(this)">
+                    <img src="prod-baskets-9.jpg" alt="Baskets 9" onerror="hideBroken(this)">
+                    <img src="prod-baskets-10.jpg" alt="Baskets 10" onerror="hideBroken(this)">
+                    <div class="carousel-dots" id="dots-baskets"></div>
+                    <button class="carousel-arrow prev" onclick="changeSlide('baskets', -1)">❮</button>
+                    <button class="carousel-arrow next" onclick="changeSlide('baskets', 1)">❯</button>
+                </div>
+                <div class="product-info">
+                    <h3>Baskets</h3>
+                    <div class="price">À partir de 6 000 FCFA</div>
+                    <button class="btn btn-primary btn-small" onclick="contactForProduct('Baskets')">
+                        <i class="fab fa-whatsapp"></i> Commander
+                    </button>
+                </div>
+            </div>
+
+            <!-- PRODUIT : Tennis -->
+            <div class="product-card">
+                <div class="product-img" data-carousel="tennis">
+                    <img src="prod-tennis.jpg" alt="Tennis 1" onerror="hideBroken(this)">
+                    <img src="prod-tennis-2.jpg" alt="Tennis 2" onerror="hideBroken(this)">
+                    <img src="prod-tennis-3.jpg" alt="Tennis 3" onerror="hideBroken(this)">
+                    <img src="prod-tennis-4.jpg" alt="Tennis 4" onerror="hideBroken(this)">
+                    <img src="prod-tennis-5.jpg" alt="Tennis 5" onerror="hideBroken(this)">
+                    <img src="prod-tennis-6.jpg" alt="Tennis 6" onerror="hideBroken(this)">
+                    <img src="prod-tennis-7.jpg" alt="Tennis 7" onerror="hideBroken(this)">
+                    <img src="prod-tennis-8.jpg" alt="Tennis 8" onerror="hideBroken(this)">
+                    <img src="prod-tennis-9.jpg" alt="Tennis 9" onerror="hideBroken(this)">
+                    <img src="prod-tennis-10.jpg" alt="Tennis 10" onerror="hideBroken(this)">
+                    <div class="carousel-dots" id="dots-tennis"></div>
+                    <button class="carousel-arrow prev" onclick="changeSlide('tennis', -1)">❮</button>
+                    <button class="carousel-arrow next" onclick="changeSlide('tennis', 1)">❯</button>
+                </div>
+                <div class="product-info">
+                    <h3>Tennis</h3>
+                    <div class="price">À partir de 5 500 FCFA</div>
+                    <button class="btn btn-primary btn-small" onclick="contactForProduct('Tennis')">
+                        <i class="fab fa-whatsapp"></i> Commander
+                    </button>
+                </div>
+            </div>
+
+            <!-- PRODUIT : Traineurs -->
+            <div class="product-card">
+                <div class="product-img" data-carousel="traineurs">
+                    <img src="prod-traineurs.jpg" alt="Traineurs 1" onerror="hideBroken(this)">
+                    <img src="prod-traineurs-2.jpg" alt="Traineurs 2" onerror="hideBroken(this)">
+                    <img src="prod-traineurs-3.jpg" alt="Traineurs 3" onerror="hideBroken(this)">
+                    <img src="prod-traineurs-4.jpg" alt="Traineurs 4" onerror="hideBroken(this)">
+                    <img src="prod-traineurs-5.jpg" alt="Traineurs 5" onerror="hideBroken(this)">
+                    <img src="prod-traineurs-6.jpg" alt="Traineurs 6" onerror="hideBroken(this)">
+                    <img src="prod-traineurs-7.jpg" alt="Traineurs 7" onerror="hideBroken(this)">
+                    <img src="prod-traineurs-8.jpg" alt="Traineurs 8" onerror="hideBroken(this)">
+                    <img src="prod-traineurs-9.jpg" alt="Traineurs 9" onerror="hideBroken(this)">
+                    <img src="prod-traineurs-10.jpg" alt="Traineurs 10" onerror="hideBroken(this)">
+                    <div class="carousel-dots" id="dots-traineurs"></div>
+                    <button class="carousel-arrow prev" onclick="changeSlide('traineurs', -1)">❮</button>
+                    <button class="carousel-arrow next" onclick="changeSlide('traineurs', 1)">❯</button>
+                </div>
+                <div class="product-info">
+                    <h3>Traineurs</h3>
+                    <div class="price">À partir de 7 000 FCFA</div>
+                    <button class="btn btn-primary btn-small" onclick="contactForProduct('Traineurs')">
+                        <i class="fab fa-whatsapp"></i> Commander
+                    </button>
+                </div>
+            </div>
+
+            <!-- PRODUIT : Sacs à Dos -->
+            <div class="product-card">
+                <div class="product-img" data-carousel="sacs-dos">
+                    <img src="prod-sacs-dos.jpg" alt="Sacs à Dos 1" onerror="hideBroken(this)">
+                    <img src="prod-sacs-dos-2.jpg" alt="Sacs à Dos 2" onerror="hideBroken(this)">
+                    <img src="prod-sacs-dos-3.jpg" alt="Sacs à Dos 3" onerror="hideBroken(this)">
+                    <img src="prod-sacs-dos-4.jpg" alt="Sacs à Dos 4" onerror="hideBroken(this)">
+                    <img src="prod-sacs-dos-5.jpg" alt="Sacs à Dos 5" onerror="hideBroken(this)">
+                    <img src="prod-sacs-dos-6.jpg" alt="Sacs à Dos 6" onerror="hideBroken(this)">
+                    <img src="prod-sacs-dos-7.jpg" alt="Sacs à Dos 7" onerror="hideBroken(this)">
+                    <img src="prod-sacs-dos-8.jpg" alt="Sacs à Dos 8" onerror="hideBroken(this)">
+                    <img src="prod-sacs-dos-9.jpg" alt="Sacs à Dos 9" onerror="hideBroken(this)">
+                    <img src="prod-sacs-dos-10.jpg" alt="Sacs à Dos 10" onerror="hideBroken(this)">
+                    <div class="carousel-dots" id="dots-sacs-dos"></div>
+                    <button class="carousel-arrow prev" onclick="changeSlide('sacs-dos', -1)">❮</button>
+                    <button class="carousel-arrow next" onclick="changeSlide('sacs-dos', 1)">❯</button>
+                </div>
+                <div class="product-info">
+                    <h3>Sacs à Dos</h3>
+                    <div class="price">À partir de 4 000 FCFA</div>
+                    <button class="btn btn-primary btn-small" onclick="contactForProduct('Sacs à Dos')">
+                        <i class="fab fa-whatsapp"></i> Commander
+                    </button>
+                </div>
+            </div>
+
+            <!-- PRODUIT : Culottes -->
+            <div class="product-card">
+                <div class="product-img" data-carousel="culottes">
+                    <img src="prod-culottes.jpg" alt="Culottes 1" onerror="hideBroken(this)">
+                    <img src="prod-culottes-2.jpg" alt="Culottes 2" onerror="hideBroken(this)">
+                    <img src="prod-culottes-3.jpg" alt="Culottes 3" onerror="hideBroken(this)">
+                    <img src="prod-culottes-4.jpg" alt="Culottes 4" onerror="hideBroken(this)">
+                    <img src="prod-culottes-5.jpg" alt="Culottes 5" onerror="hideBroken(this)">
+                    <img src="prod-culottes-6.jpg" alt="Culottes 6" onerror="hideBroken(this)">
+                    <img src="prod-culottes-7.jpg" alt="Culottes 7" onerror="hideBroken(this)">
+                    <img src="prod-culottes-8.jpg" alt="Culottes 8" onerror="hideBroken(this)">
+                    <img src="prod-culottes-9.jpg" alt="Culottes 9" onerror="hideBroken(this)">
+                    <img src="prod-culottes-10.jpg" alt="Culottes 10" onerror="hideBroken(this)">
+                    <div class="carousel-dots" id="dots-culottes"></div>
+                    <button class="carousel-arrow prev" onclick="changeSlide('culottes', -1)">❮</button>
+                    <button class="carousel-arrow next" onclick="changeSlide('culottes', 1)">❯</button>
+                </div>
+                <div class="product-info">
+                    <h3>Culottes</h3>
+                    <div class="price">À partir de 1 500 FCFA</div>
+                    <button class="btn btn-primary btn-small" onclick="contactForProduct('Culottes')">
+                        <i class="fab fa-whatsapp"></i> Commander
+                    </button>
+                </div>
+            </div>
+
+            <!-- PRODUIT : Jeans -->
+            <div class="product-card">
+                <div class="product-img" data-carousel="jeans">
+                    <img src="prod-jeans.jpg" alt="Jeans 1" onerror="hideBroken(this)">
+                    <img src="prod-jeans-2.jpg" alt="Jeans 2" onerror="hideBroken(this)">
+                    <img src="prod-jeans-3.jpg" alt="Jeans 3" onerror="hideBroken(this)">
+                    <img src="prod-jeans-4.jpg" alt="Jeans 4" onerror="hideBroken(this)">
+                    <img src="prod-jeans-5.jpg" alt="Jeans 5" onerror="hideBroken(this)">
+                    <img src="prod-jeans-6.jpg" alt="Jeans 6" onerror="hideBroken(this)">
+                    <img src="prod-jeans-7.jpg" alt="Jeans 7" onerror="hideBroken(this)">
+                    <img src="prod-jeans-8.jpg" alt="Jeans 8" onerror="hideBroken(this)">
+                    <img src="prod-jeans-9.jpg" alt="Jeans 9" onerror="hideBroken(this)">
+                    <img src="prod-jeans-10.jpg" alt="Jeans 10" onerror="hideBroken(this)">
+                    <div class="carousel-dots" id="dots-jeans"></div>
+                    <button class="carousel-arrow prev" onclick="changeSlide('jeans', -1)">❮</button>
+                    <button class="carousel-arrow next" onclick="changeSlide('jeans', 1)">❯</button>
+                </div>
+                <div class="product-info">
+                    <h3>Jeans</h3>
+                    <div class="price">À partir de 5 000 FCFA</div>
+                    <button class="btn btn-primary btn-small" onclick="contactForProduct('Jeans')">
+                        <i class="fab fa-whatsapp"></i> Commander
+                    </button>
+                </div>
+            </div>
+
+            <!-- PRODUIT : Sandales -->
+            <div class="product-card">
+                <div class="product-img" data-carousel="sandales">
+                    <img src="prod-sandales.jpg" alt="Sandales 1" onerror="hideBroken(this)">
+                    <img src="prod-sandales-2.jpg" alt="Sandales 2" onerror="hideBroken(this)">
+                    <img src="prod-sandales-3.jpg" alt="Sandales 3" onerror="hideBroken(this)">
+                    <img src="prod-sandales-4.jpg" alt="Sandales 4" onerror="hideBroken(this)">
+                    <img src="prod-sandales-5.jpg" alt="Sandales 5" onerror="hideBroken(this)">
+                    <img src="prod-sandales-6.jpg" alt="Sandales 6" onerror="hideBroken(this)">
+                    <img src="prod-sandales-7.jpg" alt="Sandales 7" onerror="hideBroken(this)">
+                    <img src="prod-sandales-8.jpg" alt="Sandales 8" onerror="hideBroken(this)">
+                    <img src="prod-sandales-9.jpg" alt="Sandales 9" onerror="hideBroken(this)">
+                    <img src="prod-sandales-10.jpg" alt="Sandales 10" onerror="hideBroken(this)">
+                    <div class="carousel-dots" id="dots-sandales"></div>
+                    <button class="carousel-arrow prev" onclick="changeSlide('sandales', -1)">❮</button>
+                    <button class="carousel-arrow next" onclick="changeSlide('sandales', 1)">❯</button>
+                </div>
+                <div class="product-info">
+                    <h3>Sandales</h3>
+                    <div class="price">À partir de 3 000 FCFA</div>
+                    <button class="btn btn-primary btn-small" onclick="contactForProduct('Sandales')">
+                        <i class="fab fa-whatsapp"></i> Commander
+                    </button>
+                </div>
+            </div>
+
+            <!-- PRODUIT : Joggings -->
+            <div class="product-card">
+                <div class="product-img" data-carousel="joggings">
+                    <img src="prod-joggings.jpg" alt="Joggings 1" onerror="hideBroken(this)">
+                    <img src="prod-joggings-2.jpg" alt="Joggings 2" onerror="hideBroken(this)">
+                    <img src="prod-joggings-3.jpg" alt="Joggings 3" onerror="hideBroken(this)">
+                    <img src="prod-joggings-4.jpg" alt="Joggings 4" onerror="hideBroken(this)">
+                    <img src="prod-joggings-5.jpg" alt="Joggings 5" onerror="hideBroken(this)">
+                    <img src="prod-joggings-6.jpg" alt="Joggings 6" onerror="hideBroken(this)">
+                    <img src="prod-joggings-7.jpg" alt="Joggings 7" onerror="hideBroken(this)">
+                    <img src="prod-joggings-8.jpg" alt="Joggings 8" onerror="hideBroken(this)">
+                    <img src="prod-joggings-9.jpg" alt="Joggings 9" onerror="hideBroken(this)">
+                    <img src="prod-joggings-10.jpg" alt="Joggings 10" onerror="hideBroken(this)">
+                    <div class="carousel-dots" id="dots-joggings"></div>
+                    <button class="carousel-arrow prev" onclick="changeSlide('joggings', -1)">❮</button>
+                    <button class="carousel-arrow next" onclick="changeSlide('joggings', 1)">❯</button>
+                </div>
+                <div class="product-info">
+                    <h3>Joggings</h3>
+                    <div class="price">À partir de 4 500 FCFA</div>
+                    <button class="btn btn-primary btn-small" onclick="contactForProduct('Joggings')">
+                        <i class="fab fa-whatsapp"></i> Commander
+                    </button>
+                </div>
+            </div>
+
+            <!-- PRODUIT : Jupes -->
+            <div class="product-card">
+                <div class="product-img" data-carousel="jupes">
+                    <img src="prod-jupes.jpg" alt="Jupes 1" onerror="hideBroken(this)">
+                    <img src="prod-jupes-2.jpg" alt="Jupes 2" onerror="hideBroken(this)">
+                    <img src="prod-jupes-3.jpg" alt="Jupes 3" onerror="hideBroken(this)">
+                    <img src="prod-jupes-4.jpg" alt="Jupes 4" onerror="hideBroken(this)">
+                    <img src="prod-jupes-5.jpg" alt="Jupes 5" onerror="hideBroken(this)">
+                    <img src="prod-jupes-6.jpg" alt="Jupes 6" onerror="hideBroken(this)">
+                    <img src="prod-jupes-7.jpg" alt="Jupes 7" onerror="hideBroken(this)">
+                    <img src="prod-jupes-8.jpg" alt="Jupes 8" onerror="hideBroken(this)">
+                    <img src="prod-jupes-9.jpg" alt="Jupes 9" onerror="hideBroken(this)">
+                    <img src="prod-jupes-10.jpg" alt="Jupes 10" onerror="hideBroken(this)">
+                    <div class="carousel-dots" id="dots-jupes"></div>
+                    <button class="carousel-arrow prev" onclick="changeSlide('jupes', -1)">❮</button>
+                    <button class="carousel-arrow next" onclick="changeSlide('jupes', 1)">❯</button>
+                </div>
+                <div class="product-info">
+                    <h3>Jupes</h3>
+                    <div class="price">À partir de 3 500 FCFA</div>
+                    <button class="btn btn-primary btn-small" onclick="contactForProduct('Jupes')">
+                        <i class="fab fa-whatsapp"></i> Commander
+                    </button>
+                </div>
+            </div>
+
+            <!-- PRODUIT : Robes -->
+            <div class="product-card">
+                <div class="product-img" data-carousel="robes">
+                    <img src="prod-robes.jpg" alt="Robes 1" onerror="hideBroken(this)">
+                    <img src="prod-robes-2.jpg" alt="Robes 2" onerror="hideBroken(this)">
+                    <img src="prod-robes-3.jpg" alt="Robes 3" onerror="hideBroken(this)">
+                    <img src="prod-robes-4.jpg" alt="Robes 4" onerror="hideBroken(this)">
+                    <img src="prod-robes-5.jpg" alt="Robes 5" onerror="hideBroken(this)">
+                    <img src="prod-robes-6.jpg" alt="Robes 6" onerror="hideBroken(this)">
+                    <img src="prod-robes-7.jpg" alt="Robes 7" onerror="hideBroken(this)">
+                    <img src="prod-robes-8.jpg" alt="Robes 8" onerror="hideBroken(this)">
+                    <img src="prod-robes-9.jpg" alt="Robes 9" onerror="hideBroken(this)">
+                    <img src="prod-robes-10.jpg" alt="Robes 10" onerror="hideBroken(this)">
+                    <div class="carousel-dots" id="dots-robes"></div>
+                    <button class="carousel-arrow prev" onclick="changeSlide('robes', -1)">❮</button>
+                    <button class="carousel-arrow next" onclick="changeSlide('robes', 1)">❯</button>
+                </div>
+                <div class="product-info">
+                    <h3>Robes</h3>
+                    <div class="price">À partir de 6 000 FCFA</div>
+                    <button class="btn btn-primary btn-small" onclick="contactForProduct('Robes')">
+                        <i class="fab fa-whatsapp"></i> Commander
+                    </button>
+                </div>
+            </div>
+
+            <!-- PRODUIT : Sous-vêtements -->
+            <div class="product-card">
+                <div class="product-img" data-carousel="sous-vetements">
+                    <img src="prod-sous-vetements.jpg" alt="Sous-vêtements 1" onerror="hideBroken(this)">
+                    <img src="prod-sous-vetements-2.jpg" alt="Sous-vêtements 2" onerror="hideBroken(this)">
+                    <img src="prod-sous-vetements-3.jpg" alt="Sous-vêtements 3" onerror="hideBroken(this)">
+                    <img src="prod-sous-vetements-4.jpg" alt="Sous-vêtements 4" onerror="hideBroken(this)">
+                    <img src="prod-sous-vetements-5.jpg" alt="Sous-vêtements 5" onerror="hideBroken(this)">
+                    <img src="prod-sous-vetements-6.jpg" alt="Sous-vêtements 6" onerror="hideBroken(this)">
+                    <img src="prod-sous-vetements-7.jpg" alt="Sous-vêtements 7" onerror="hideBroken(this)">
+                    <img src="prod-sous-vetements-8.jpg" alt="Sous-vêtements 8" onerror="hideBroken(this)">
+                    <img src="prod-sous-vetements-9.jpg" alt="Sous-vêtements 9" onerror="hideBroken(this)">
+                    <img src="prod-sous-vetements-10.jpg" alt="Sous-vêtements 10" onerror="hideBroken(this)">
+                    <div class="carousel-dots" id="dots-sous-vetements"></div>
+                    <button class="carousel-arrow prev" onclick="changeSlide('sous-vetements', -1)">❮</button>
+                    <button class="carousel-arrow next" onclick="changeSlide('sous-vetements', 1)">❯</button>
+                </div>
+                <div class="product-info">
+                    <h3>Sous-vêtements</h3>
+                    <div class="price">À partir de 1 000 FCFA</div>
+                    <button class="btn btn-primary btn-small" onclick="contactForProduct('Sous-vêtements')">
+                        <i class="fab fa-whatsapp"></i> Commander
+                    </button>
+                </div>
+            </div>
+
+            <!-- PRODUIT : Sacs de Sorties -->
+            <div class="product-card">
+                <div class="product-img" data-carousel="sacs-sorties">
+                    <img src="prod-sacs-sorties.jpg" alt="Sacs de Sorties 1" onerror="hideBroken(this)">
+                    <img src="prod-sacs-sorties-2.jpg" alt="Sacs de Sorties 2" onerror="hideBroken(this)">
+                    <img src="prod-sacs-sorties-3.jpg" alt="Sacs de Sorties 3" onerror="hideBroken(this)">
+                    <img src="prod-sacs-sorties-4.jpg" alt="Sacs de Sorties 4" onerror="hideBroken(this)">
+                    <img src="prod-sacs-sorties-5.jpg" alt="Sacs de Sorties 5" onerror="hideBroken(this)">
+                    <img src="prod-sacs-sorties-6.jpg" alt="Sacs de Sorties 6" onerror="hideBroken(this)">
+                    <img src="prod-sacs-sorties-7.jpg" alt="Sacs de Sorties 7" onerror="hideBroken(this)">
+                    <img src="prod-sacs-sorties-8.jpg" alt="Sacs de Sorties 8" onerror="hideBroken(this)">
+                    <img src="prod-sacs-sorties-9.jpg" alt="Sacs de Sorties 9" onerror="hideBroken(this)">
+                    <img src="prod-sacs-sorties-10.jpg" alt="Sacs de Sorties 10" onerror="hideBroken(this)">
+                    <div class="carousel-dots" id="dots-sacs-sorties"></div>
+                    <button class="carousel-arrow prev" onclick="changeSlide('sacs-sorties', -1)">❮</button>
+                    <button class="carousel-arrow next" onclick="changeSlide('sacs-sorties', 1)">❯</button>
+                </div>
+                <div class="product-info">
+                    <h3>Sacs de Sorties</h3>
+                    <div class="price">À partir de 3 500 FCFA</div>
+                    <button class="btn btn-primary btn-small" onclick="contactForProduct('Sacs de Sorties')">
+                        <i class="fab fa-whatsapp"></i> Commander
+                    </button>
+                </div>
+            </div>
+
+            <!-- PRODUIT : Ensembles Joggings -->
+            <div class="product-card">
+                <div class="product-img" data-carousel="ensembles-joggings">
+                    <img src="prod-ensembles-joggings.jpg" alt="Ensembles Joggings 1" onerror="hideBroken(this)">
+                    <img src="prod-ensembles-joggings-2.jpg" alt="Ensembles Joggings 2" onerror="hideBroken(this)">
+                    <img src="prod-ensembles-joggings-3.jpg" alt="Ensembles Joggings 3" onerror="hideBroken(this)">
+                    <img src="prod-ensembles-joggings-4.jpg" alt="Ensembles Joggings 4" onerror="hideBroken(this)">
+                    <img src="prod-ensembles-joggings-5.jpg" alt="Ensembles Joggings 5" onerror="hideBroken(this)">
+                    <img src="prod-ensembles-joggings-6.jpg" alt="Ensembles Joggings 6" onerror="hideBroken(this)">
+                    <img src="prod-ensembles-joggings-7.jpg" alt="Ensembles Joggings 7" onerror="hideBroken(this)">
+                    <img src="prod-ensembles-joggings-8.jpg" alt="Ensembles Joggings 8" onerror="hideBroken(this)">
+                    <img src="prod-ensembles-joggings-9.jpg" alt="Ensembles Joggings 9" onerror="hideBroken(this)">
+                    <img src="prod-ensembles-joggings-10.jpg" alt="Ensembles Joggings 10" onerror="hideBroken(this)">
+                    <div class="carousel-dots" id="dots-ensembles-joggings"></div>
+                    <button class="carousel-arrow prev" onclick="changeSlide('ensembles-joggings', -1)">❮</button>
+                    <button class="carousel-arrow next" onclick="changeSlide('ensembles-joggings', 1)">❯</button>
+                </div>
+                <div class="product-info">
+                    <h3>Ensembles Joggings</h3>
+                    <div class="price">À partir de 7 000 FCFA</div>
+                    <button class="btn btn-primary btn-small" onclick="contactForProduct('Ensembles Joggings')">
+                        <i class="fab fa-whatsapp"></i> Commander
+                    </button>
+                </div>
+            </div>
+
+    </section>
+
+    <!-- About -->
+    <section id="apropos">
+        <div class="section-title">
+            <h2>À Propos de Nous</h2>
+            <div class="line"></div>
+            <p>Votre boutique de confiance au cœur de Bouaké</p>
+        </div>
+        <div class="about-grid">
+            <div class="about-content">
+                <h3>Baby Star depuis 2026</h3>
+                <p>Située à Broukro, 6è Arrêt, près de l'école le REPERE, Baby Star est votre destination privilégiée pour habiller vos enfants avec style et confort. Nous sélectionnons rigoureusement chaque article pour vous garantir qualité, durabilité et tendance.</p>
+                <p>De la layette au prêt-à-porter ado, notre équipe passionnée vous accompagne pour trouver les tenues parfaites pour chaque âge et chaque occasion.</p>
+
+                <ul class="info-list">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Adresse</strong>
+                            <span>Broukro 6è Arrêt, près de l'école le REPERE, Bouaké</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <strong>Téléphone / WhatsApp</strong>
+                            <span>01 53 12 92 97</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email</strong>
+                            <span>nabusiness@gmail.com</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="map-placeholder">
+                <i class="fas fa-map-marked-alt"></i>
+                <p>Baby Star</p>
+                <small>Broukro 6è Arrêt, près de l'école le REPERE</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hours -->
+    <section class="hours-section" id="horaires">
+        <div class="section-title">
+            <h2>Nos Horaires</h2>
+            <div class="line" style="background: var(--accent);"></div>
+            <p>Venez nous rendre visite !</p>
+        </div>
+        <div class="hours-grid">
+            <div class="hour-card">
+                <div class="day">Lundi</div>
+                <div class="time">08:00 - 20:00</div>
+                <div class="status status-open">Ouvert</div>
+            </div>
+            <div class="hour-card">
+                <div class="day">Mardi</div>
+                <div class="time">08:00 - 20:00</div>
+                <div class="status status-open">Ouvert</div>
+            </div>
+            <div class="hour-card">
+                <div class="day">Mercredi</div>
+                <div class="time">08:00 - 20:00</div>
+                <div class="status status-open">Ouvert</div>
+            </div>
+            <div class="hour-card">
+                <div class="day">Jeudi</div>
+                <div class="time">08:00 - 20:00</div>
+                <div class="status status-open">Ouvert</div>
+            </div>
+            <div class="hour-card">
+                <div class="day">Vendredi</div>
+                <div class="time">08:00 - 20:00</div>
+                <div class="status status-open">Ouvert</div>
+            </div>
+            <div class="hour-card">
+                <div class="day">Samedi</div>
+                <div class="time">08:00 - 20:00</div>
+                <div class="status status-open">Ouvert</div>
+            </div>
+            <div class="hour-card">
+                <div class="day">Dimanche</div>
+                <div class="time">Fermé</div>
+                <div class="status status-closed">Fermé</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <div class="section-title">
+            <h2>Contactez-Nous</h2>
+            <div class="line"></div>
+            <p>Une question ? Un besoin spécifique ? Écrivez-nous !</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-form">
+                <form onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Votre nom</label>
+                        <input type="text" id="name" placeholder="Ex: Aminata Koné" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email ou Téléphone</label>
+                        <input type="text" id="email" placeholder="Ex: 07 XX XX XX XX" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Sujet</label>
+                        <select id="subject" required>
+                            <option value="">Choisir un sujet...</option>
+                            <option value="commande">Passer une commande</option>
+                            <option value="renseignement">Renseignement</option>
+                            <option value="disponibilite">Vérifier disponibilité</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Votre message</label>
+                        <textarea id="message" placeholder="Décrivez votre demande..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                        <i class="fas fa-paper-plane"></i> Envoyer le message
+                    </button>
+                </form>
+            </div>
+            <div class="contact-info-cards">
+                <div class="contact-card">
+                    <i class="fab fa-whatsapp"></i>
+                    <div>
+                        <strong>WhatsApp</strong>
+                        <a href="https://wa.me/2250153129297" target="_blank">01 53 12 92 97</a>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <strong>Téléphone</strong>
+                        <a href="tel:0153129297">01 53 12 92 97</a>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <strong>Email</strong>
+                        <a href="mailto:nabusiness@gmail.com">nabusiness@gmail.com</a>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <strong>Adresse</strong>
+                        <span>Broukro 6è Arrêt, près de l'école le REPERE, Bouaké</span>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <strong>Horaires</strong>
+                        <span>Lun-Sam: 8h - 20h | Dim: Fermé</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-star"></i> Baby Star</h3>
+                <p>Votre boutique de vêtements, chaussures et accessoires pour enfants et adolescents à Bouaké. Qualité, style et prix juste depuis 2026.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/2250153129297" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Liens rapides</h3>
+                <ul>
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#categories">Nos catégories</a></li>
+                    <li><a href="#produits">Nos produits</a></li>
+                    <li><a href="#apropos">À propos</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Catégories</h3>
+                <ul>
+                    <li><a href="#">Ensembles Filles</a></li>
+                    <li><a href="#">Ensembles Garçons</a></li>
+                    <li><a href="#">Chaussures</a></li>
+                    <li><a href="#">Accessoires</a></li>
+                    <li><a href="#">Vêtements</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Broukro 6è Arrêt, près de l'école le REPERE</p>
+                <p><i class="fas fa-phone"></i> 01 53 12 92 97</p>
+                <p><i class="fas fa-envelope"></i> nabusiness@gmail.com</p>
+                <p><i class="fas fa-clock"></i> Lun-Sam: 8h - 20h | Dim: Fermé</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Baby Star - Bouaké, Côte d'Ivoire. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- MUSIC PLAYER -->
+    <div class="music-player">
+        <button class="music-btn" id="musicBtn" onclick="toggleMusic()">
+            <span class="music-tooltip" id="musicTooltip">Activer la musique</span>
+            <i class="fas fa-music" id="musicIcon"></i>
+        </button>
+        <audio id="bgMusic" loop>
+            <source src="musique.mp3" type="audio/mpeg">
+            Votre navigateur ne supporte pas la musique.
+        </audio>
+    </div>
+
+    <!-- AUTOPLAY FALLBACK BANNER -->
+    <div class="music-fallback" id="musicFallback" onclick="toggleMusic()">
+        <i class="fas fa-music"></i>
+        <span>🎵 Cliquez n'importe où pour activer la musique</span>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+            document.querySelector('.overlay').classList.toggle('active');
+        }
+
+        // Smooth Scroll
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Contact for Product via WhatsApp
+        function contactForProduct(productName) {
+            const message = `Bonjour Baby Star, je suis intéressé(e) par : ${productName}. Est-ce disponible ?`;
+            const whatsappUrl = `https://wa.me/2250153129297?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Form Submit
+        function handleSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            alert('Merci ' + name + ' ! Votre message a bien été envoyé. Nous vous répondrons dans les plus brefs délais sur WhatsApp au 01 53 12 92 97.');
+            e.target.reset();
+        }
+
+        // CAROUSEL SYSTEM - 10 IMAGES
+        const carousels = {};
+
+        function hideBroken(img) {
+            img.style.display = 'none';
+            img.classList.add('broken');
+            setTimeout(initCarousels, 100);
+        }
+
+        function initCarousels() {
+            document.querySelectorAll('.product-img[data-carousel]').forEach(container => {
+                const id = container.getAttribute('data-carousel');
+                const images = Array.from(container.querySelectorAll('img')).filter(img => img.style.display !== 'none' && !img.classList.contains('broken'));
+                const dotsContainer = document.getElementById('dots-' + id);
+
+                if (!carousels[id]) {
+                    carousels[id] = { current: 0, total: images.length };
+                }
+
+                carousels[id].total = images.length;
+
+                if (dotsContainer) {
+                    dotsContainer.innerHTML = '';
+                    if (images.length > 1) {
+                        dotsContainer.classList.add('visible');
+                        images.forEach((_, index) => {
+                            const dot = document.createElement('button');
+                            dot.className = 'carousel-dot' + (index === carousels[id].current ? ' active' : '');
+                            dot.onclick = (e) => {
+                                e.stopPropagation();
+                                goToSlide(id, index);
+                            };
+                            dotsContainer.appendChild(dot);
+                        });
+                    } else {
+                        dotsContainer.classList.remove('visible');
+                    }
+                }
+
+                updateCarousel(id);
+            });
+        }
+
+        function updateCarousel(id) {
+            const container = document.querySelector('.product-img[data-carousel="' + id + '"]');
+            if (!container) return;
+            const images = Array.from(container.querySelectorAll('img')).filter(img => img.style.display !== 'none' && !img.classList.contains('broken'));
+
+            images.forEach((img, index) => {
+                img.classList.toggle('active', index === carousels[id].current);
+            });
+
+            const dots = document.querySelectorAll('#dots-' + id + ' .carousel-dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === carousels[id].current);
+            });
+        }
+
+        function changeSlide(id, direction) {
+            if (!carousels[id]) return;
+            carousels[id].current = (carousels[id].current + direction + carousels[id].total) % carousels[id].total;
+            updateCarousel(id);
+        }
+
+        function goToSlide(id, index) {
+            if (!carousels[id]) return;
+            carousels[id].current = index;
+            updateCarousel(id);
+        }
+
+        // Auto-init carousels after images load
+        window.addEventListener('load', initCarousels);
+        setTimeout(initCarousels, 500);
+        setTimeout(initCarousels, 1500);
+
+        // MUSIC PLAYER - AUTOPLAY WITH FALLBACK
+        let musicPlaying = false;
+        let autoplayAttempted = false;
+
+        function toggleMusic() {
+            const audio = document.getElementById('bgMusic');
+            const btn = document.getElementById('musicBtn');
+            const icon = document.getElementById('musicIcon');
+            const tooltip = document.getElementById('musicTooltip');
+            const fallback = document.getElementById('musicFallback');
+
+            if (!musicPlaying) {
+                audio.play().then(() => {
+                    musicPlaying = true;
+                    btn.classList.add('playing');
+                    icon.className = 'fas fa-pause';
+                    tooltip.textContent = 'Pause musique';
+                    fallback.classList.remove('show');
+                }).catch(err => {
+                    console.log('Autoplay bloqué par le navigateur');
+                });
+            } else {
+                audio.pause();
+                musicPlaying = false;
+                btn.classList.remove('playing');
+                icon.className = 'fas fa-music';
+                tooltip.textContent = 'Activer la musique';
+            }
+        }
+
+        // AUTOPLAY ATTEMPT ON LOAD
+        function attemptAutoplay() {
+            if (autoplayAttempted) return;
+            autoplayAttempted = true;
+
+            const audio = document.getElementById('bgMusic');
+            const fallback = document.getElementById('musicFallback');
+
+            audio.play().then(() => {
+                musicPlaying = true;
+                document.getElementById('musicBtn').classList.add('playing');
+                document.getElementById('musicIcon').className = 'fas fa-pause';
+                document.getElementById('musicTooltip').textContent = 'Pause musique';
+            }).catch(() => {
+                // Autoplay blocked - show fallback banner after 2 seconds
+                setTimeout(() => {
+                    fallback.classList.add('show');
+                }, 2000);
+            });
+        }
+
+        // Try autoplay on load
+        window.addEventListener('load', attemptAutoplay);
+
+        // Also try on first user interaction (click, scroll, touch)
+        function enableAudioOnInteraction() {
+            if (!musicPlaying) {
+                toggleMusic();
+            }
+            document.removeEventListener('click', enableAudioOnInteraction);
+            document.removeEventListener('scroll', enableAudioOnInteraction);
+            document.removeEventListener('touchstart', enableAudioOnInteraction);
+        }
+
+        document.addEventListener('click', enableAudioOnInteraction);
+        document.addEventListener('scroll', enableAudioOnInteraction);
+        document.addEventListener('touchstart', enableAudioOnInteraction);
+
+        // Scroll Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.category-card, .product-card, .hour-card, .contact-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+
+</body>
+</html>
